@@ -1,0 +1,9 @@
+{
+  "buildCommand": "pnpm --workspace-root exec turbo --no-daemon --filter template2 build --env-mode loose",
+  "installCommand": "node -v && pnpm --workspace-root --filter template2... install --config.dedupe-peer-dependents=false",
+  "build": {
+    "env": {
+      "ENABLE_EXPERIMENTAL_COREPACK": "1"
+    }
+  }
+}

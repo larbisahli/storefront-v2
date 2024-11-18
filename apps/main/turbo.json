@@ -1,0 +1,10 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "env": ["TEMPLATE_1_URL", "TEMPLATE_2_URL", "TEMPLATE_3_URL"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    }
+  }
+}
