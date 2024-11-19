@@ -69,7 +69,7 @@
     "clsx": "^1.2.1"
   },
   "dependencies": {
-    "@swc/helpers": "^0.4.12",
+    "@swc/helpers": "^0.5.1",
     "html-react-parser": "^3.0.16",
     "react-select": "^5.7.3",
     "react-vimeo": "^2.0.0",
