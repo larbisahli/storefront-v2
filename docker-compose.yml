@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  server:
+    image: storefront_app
+    container_name: storefront
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./logs:/usr/src/app/logs
+    ports:
+      - '3000:3000'

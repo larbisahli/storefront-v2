@@ -1,0 +1,62 @@
+{
+  "name": "@dropgala/types",
+  "version": "2.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pnpm build --watch",
+    "build": "tsup src/* --format esm,cjs --dts --external react",
+    "lint": "TIMING=1 eslint \"**/*.{ts,tsx,js,jsx}\" --fix",
+    "clean": "rm -rf dist && rm -rf .turbo"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": {
+      "import": [
+        "./dist/*.js",
+        "./dist/*/index.js"
+      ],
+      "require": [
+        "./dist/*.cjs",
+        "./dist/*/index.cjs"
+      ]
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*",
+        "src/*/index"
+      ]
+    }
+  },
+  "publishConfig": {
+    "typesVersions": {
+      "*": {
+        "*": [
+          "dist/*.d.ts",
+          "dist/*/index.d.ts"
+        ]
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "@grpc/proto-loader": "^0.7.6",
+    "@grpc/grpc-js": "^1.8.14"
+  },
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "eslint-config-dropgala": "workspace:*",
+    "@grpc/grpc-js": "^1.8.14",
+    "@grpc/proto-loader": "^0.7.6",
+    "tsup": "^5.12.8",
+    "typescript": "5.0.4"
+  }
+}

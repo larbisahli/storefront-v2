@@ -1,13 +1,11 @@
 module.exports = {
-  presets: [
-    require('@vercel/examples-ui/tailwind'),
-    require('@acme/design-system/tailwind'),
-  ],
+  presets: [require('@dropgala/ui/tailwind')],
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.tsx',
+    './containers/**/*.tsx',
     // Add the external packages that are using Tailwind CSS
-    '../../packages/acme-components/src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@acme/design-system/dist/**/*.js',
-    './node_modules/@vercel/examples-ui/**/*.js',
-  ],
+    '../../packages/dropgala-ui/src/**/*.{js,ts,jsx,tsx}',
+    '../../packages/dropgala-assets/src/**/*.{js,ts,jsx,tsx}',
+  ]
 }

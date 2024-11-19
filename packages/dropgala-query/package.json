@@ -1,0 +1,83 @@
+{
+  "name": "@dropgala/query",
+  "version": "2.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pnpm build --watch",
+    "build": "tsup src/* --format esm,cjs --dts --external react",
+    "lint": "TIMING=1 eslint \"**/*.{ts,tsx,js,jsx, proto}\" --fix",
+    "clean": "rm -rf dist && rm -rf .turbo"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": {
+      "import": [
+        "./dist/*.js",
+        "./dist/*/index.js"
+      ],
+      "require": [
+        "./dist/*.cjs",
+        "./dist/*/index.cjs"
+      ]
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*",
+        "src/*/index"
+      ]
+    }
+  },
+  "publishConfig": {
+    "typesVersions": {
+      "*": {
+        "*": [
+          "dist/*.d.ts",
+          "dist/*/index.d.ts"
+        ]
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@graphql-tools/schema": "^10.0.4",
+    "@grpc/proto-loader": "^0.7.6",
+    "deepmerge": "^4.3.1",
+    "lru-cache": "^11.0.0",
+    "protobufjs": "^7.3.2",
+    "request-ip": "^3.3.0",
+    "uuid": "^10.0.0"
+  },
+  "peerDependencies": {
+    "@apollo/client": "^3.7.11",
+    "@dropgala/types": "workspace:*",
+    "@dropgala/utils": "workspace:*",
+    "mongoose": "^8.5.1",
+    "cookies": "^0.8.0",
+    "csrf": "^3.1.0",
+    "graphql": "^16.9.0",
+    "next": "^14.0.0",
+    "react": "^18.0.0-0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.7.11",
+    "@types/byte-size": "^8.1.2",
+    "@types/react": "^18.3.10",
+    "@types/request-ip": "^0.0.41",
+    "@types/cookies": "^0.7.10",
+    "@types/uuid": "^10.0.0",
+    "eslint": "^8.38.0",
+    "eslint-config-dropgala": "workspace:*",
+    "tsup": "^5.12.8",
+    "typescript": "5.0.4"
+  }
+}

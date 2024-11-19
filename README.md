@@ -13,6 +13,13 @@ relatedTemplates:
   - turborepo-sveltekit-starter
 ---
 
+- pm2 stop app
+- pnpm run clean
+- pnpm install
+- pnpm run build
+- pm2 start "pnpm run start" --name app
+
+
 # Microfrontends
 
 Microfrontends allow teams to work independently of each other by splitting the application into smaller, shareable, and modular components. The primary goal for a microfrontend strategy is to reduce the size of a single application to improve developer velocity while still allowing teams to collaborate with each other.

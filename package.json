@@ -1,6 +1,6 @@
 {
-  "name": "microfrontends",
-  "repository": "https://github.com/vercel/examples.git",
+  "name": "dropgala-storefront",
+  "repository": "https://github.com/dropgala/storefront",
   "license": "MIT",
   "private": true,
   "workspaces": [
@@ -10,9 +10,6 @@
   "scripts": {
     "build": "turbo run build",
     "build:main": "turbo run build --filter=main...",
-    "build:template1": "turbo run build --filter=template1...",
-    "build:template2": "turbo run build --filter=template2...",
-    "build:template3": "turbo run build --filter=template3...",
     "changeset": "changeset",
     "clean": "turbo run clean && rm -rf node_modules",
     "dev": "turbo run dev",
